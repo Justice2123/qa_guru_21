@@ -2,12 +2,10 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-
 @Config.Sources({
         "classpath:host/${deviceHost}.properties",
         "classpath:browserstack.properties"
 })
-
 
 public interface BrowserStackConfig extends Config {
 
@@ -31,6 +29,5 @@ public interface BrowserStackConfig extends Config {
 
     @Key("browserstackUrl")
     String url();
-
 
 }

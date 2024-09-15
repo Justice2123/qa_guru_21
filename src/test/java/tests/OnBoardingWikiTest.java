@@ -2,14 +2,17 @@ package tests;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.WikiPage;
+import pages.*;
 
 public class OnBoardingWikiTest extends TestBase {
 
     @Test
     @Tag("mobile")
     void gettingStartedTest() {
-        WikiPage wikiPage = new WikiPage();
+        FirstWikiPage firstWikiPage = new FirstWikiPage();
+        SecondWikiPage secondWikiPage = new SecondWikiPage();
+        ThirdWikiPage thirdWikiPage = new ThirdWikiPage();
+        FourthWikiPage fourthWikiPage = new FourthWikiPage();
 
         String firstHeader = "The Free Encyclopedia " +
                 "…in over 300 languages";
@@ -18,18 +21,18 @@ public class OnBoardingWikiTest extends TestBase {
         String fourthHeader = "Data & Privacy";
 
 
-        wikiPage.checkOfForwardButton()
-                .checkHeader(firstHeader)
-                .clickOnForwardButton()
-                .checkOfForwardButton()
-                .checkHeader(secondHeader)
-                .clickOnForwardButton()
-                .checkOfForwardButton()
-                .checkHeader(thirdHeader)
-                .clickOnForwardButton()
-                .checkDoneButton()
-                .checkHeader(fourthHeader)
-                .clickDoneButton();
+        firstWikiPage.checkOfForwardButtonFirstPage()
+                .checkHeaderFirstPage(firstHeader)
+                .clickOnForwardButtonFirstPage();
+        secondWikiPage.checkOfForwardButtonSecondPage()
+                .checkHeaderSecondPage(secondHeader)
+                .clickOnForwardButtonSecondPage();
+        thirdWikiPage.checkOfForwardButtonThirdPage()
+                .checkHeaderThirdPage(thirdHeader)
+                .clickOnForwardButtonThirdPage();
+        fourthWikiPage.checkDoneButtonFourthPage()
+                .checkHeaderFourthPage(fourthHeader)
+                .clickDoneButtonFourthPage();
     }
 
 }

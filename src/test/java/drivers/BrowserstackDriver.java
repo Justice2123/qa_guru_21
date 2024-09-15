@@ -22,7 +22,6 @@ public class BrowserstackDriver implements WebDriverProvider {
         AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
         caps.setCapability("browserstack.user", authConfig.mobileUser());
         caps.setCapability("browserstack.key", authConfig.mobilePass());
-
         BrowserStackConfig hostConfig = ConfigFactory.create(BrowserStackConfig.class, System.getProperties());
         caps.setCapability("app", hostConfig.app());
         caps.setCapability("device", hostConfig.device());
@@ -30,7 +29,6 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("project", hostConfig.project());
         caps.setCapability("build", hostConfig.build());
         caps.setCapability("name", hostConfig.name());
-
 
         try {
             return new RemoteWebDriver(

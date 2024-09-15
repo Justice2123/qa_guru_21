@@ -1,0 +1,33 @@
+package pages;
+
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static io.appium.java_client.AppiumBy.id;
+
+public class ThirdWikiPage {
+    SelenideElement forwardButtonThirdPage = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
+            headerThirdPage = $(id("org.wikipedia.alpha:id/primaryTextView"));
+
+    @Step("Проверка видимости кнопки 'Продолжить'")
+    public ThirdWikiPage checkOfForwardButtonThirdPage() {
+        forwardButtonThirdPage.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Нажатие на кнопку Продолжить на первой странице")
+    public ThirdWikiPage clickOnForwardButtonThirdPage() {
+        forwardButtonThirdPage.click();
+        return this;
+    }
+
+    @Step("Проверка правильности заголовка")
+    public ThirdWikiPage checkHeaderThirdPage(String value) {
+        headerThirdPage.shouldHave(text(value));
+        return this;
+    }
+
+}

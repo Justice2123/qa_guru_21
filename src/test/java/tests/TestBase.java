@@ -46,8 +46,6 @@ public class TestBase {
         if ("browserstack".equals(System.getProperty("deviceHost"))) {
             Attach.addVideo(sessionId);
         }
-
     }
-
 
 }

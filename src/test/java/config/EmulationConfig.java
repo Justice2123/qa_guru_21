@@ -17,5 +17,4 @@ public interface EmulationConfig extends Config {
     @Key("mobileUrl")
     String mobileUrl();
 
-
 }

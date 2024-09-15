@@ -1,0 +1,34 @@
+package pages;
+
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static io.appium.java_client.AppiumBy.id;
+
+public class FourthWikiPage {
+    SelenideElement doneButtonFourthPage = $(id("org.wikipedia.alpha:id/fragment_onboarding_done_button")),
+            headerFourthPage = $(id("org.wikipedia.alpha:id/primaryTextView"));
+
+
+    @Step("Проверка видимости кнопки 'Начать на четвертой странице'")
+    public FourthWikiPage checkDoneButtonFourthPage() {
+        doneButtonFourthPage.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Нажатие на кнопку 'Начать на четвертой странице'")
+    public FourthWikiPage clickDoneButtonFourthPage() {
+        doneButtonFourthPage.click();
+        return this;
+    }
+
+    @Step("Проверка правильности заголовка")
+    public FourthWikiPage checkHeaderFourthPage(String value) {
+        headerFourthPage.shouldHave(text(value));
+        return this;
+    }
+
+}

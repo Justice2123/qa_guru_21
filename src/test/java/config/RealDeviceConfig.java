@@ -15,5 +15,4 @@ public interface RealDeviceConfig extends Config {
     @Config.Key("mobileUrl")
     String mobileUrl();
 
-
 }
